@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarePoint | Hospital Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="loginView" class="login-view">
+    <div class="login-card">
+      <div class="brand-mark">✚</div>
+      <h1>CarePoint Hospital</h1>
+      <p class="muted">Hospital Management Portal</p>
+      <form id="loginForm">
+        <label for="username">Email or username</label>
+        <input id="username" autocomplete="username" placeholder="Enter your email or username" required />
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="Enter password" required />
+        <p id="loginError" class="error" aria-live="polite"></p>
+        <button class="primary full" type="submit">Sign in</button>
+      </form>
+      <form id="createAccountForm" class="hidden">
+        <label for="accountName">Full name</label>
+        <input id="accountName" name="name" autocomplete="name" placeholder="Enter your full name" required />
+        <label for="accountPhone">Phone number</label>
+        <input id="accountPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Enter your phone number" required />
+        <label for="accountAge">Age</label>
+        <input id="accountAge" name="age" type="number" min="1" max="120" inputmode="numeric" placeholder="Enter your age" required />
+        <label for="accountEmail">Email</label>
+        <input id="accountEmail" name="email" type="email" autocomplete="email" placeholder="Enter your email" required />
+        <label for="accountPassword">Password</label>
+        <input id="accountPassword" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required />
+        <p id="createAccountError" class="error" aria-live="polite"></p>
+        <button class="primary full" type="submit">Create account</button>
+      </form>
+      <p class="account-toggle"><span id="accountPrompt">New here?</span> <button id="accountToggle" class="text-btn" type="button">Create an account</button></p>
+      <div id="demoNote" class="demo-note"><strong>Demo login</strong><br />Username: <code>admin</code> &nbsp; Password: <code>admin123</code></div>
+    </div>
+  </section>
+
+  <div id="appView" class="app-view hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark small">✚</span><span>CarePoint</span></div>
+      <p class="nav-label">MAIN MENU</p>
+      <nav id="navMenu">
+        <button class="nav-item active" data-page="dashboard">▦ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="patients">♙ <span>Patients</span></button>
+        <button class="nav-item" data-page="doctors">⚕ <span>Doctors</span></button>
+        <button class="nav-item" data-page="appointments">▣ <span>Appointments</span></button>
+        <button class="nav-item" data-page="billing">▤ <span>Billing</span></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="profile"><div id="profileAvatar" class="avatar">A</div><div><strong id="profileName">Administrator</strong><small id="profileRole">System admin</small></div></div><button id="logoutBtn" class="logout">↪ <span>Logout</span></button></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div><span class="eyebrow">CAREPOINT HOSPITAL</span><h2 id="pageTitle">Dashboard</h2></div><div class="top-user"><span class="status-dot"></span> Logged in as <span id="topUserName">Admin</span></div></header>
+      <div id="pageContent" class="page-content"></div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
